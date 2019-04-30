@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head">
+</head>
+<body>
+<h1>Create new Product</h1>
+<p>
+<div th:if="${message}">
+    <span th:text="${message}"></span>
+</div>
+</p>
+<p>
+    <a href="/product">Back to products list</a>
+</p>
+<form action="#" th:action="@{/product/save}" method="post" th:object="${product}">
+    <fieldset>
+        <legend>Product information</legend>
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td><input type="text"  th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <td>Description: </td>
+                <td><input type="text"  th:field="*{description}"></td>
+            </tr>
+            <tr>
+                <td>Price: </td>
+                <td><input type="text" th:field="*{price}"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Create customer"></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+<footer th:replace="layout :: footer"></footer>
+</html>

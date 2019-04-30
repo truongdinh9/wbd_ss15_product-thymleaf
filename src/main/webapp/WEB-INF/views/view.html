@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head">
+</head>
+<body>
+<h1>Customer information </h1>
+<p>
+    <!--<div th:if="${message}">-->
+    <!--<span th:text="${message}"></span>-->
+    <!--</div>-->
+</p>
+<p>
+    <a href="/product">Back to product list</a>
+</p>
+<form  th:object="${product}">
+    <fieldset>
+        <input type="hidden" th:field="*{id}" >
+        <legend>Customer information</legend>
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td th:text="${product.getName()}"></td>
+            </tr>
+            <tr>
+                <td>Description: </td>
+                <td th:text="${product.description}"></td>
+
+            </tr>
+            <tr>
+                <td>Address: </td>
+                <td th:text="${product.price}"></td>
+            </tr>
+            <tr>
+                <td></td>
+
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+<footer th:replace="layout :: footer"></footer>
+</html>
